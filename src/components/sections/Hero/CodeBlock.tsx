@@ -20,13 +20,11 @@ export const CodeBlock: React.FC = () => {
               <br />
               {"  "}name: <span className="text-green-400">'Andreu Sánchez Guerrero'</span>,
               <br /><br />
-              {"  "}company: <span className="text-green-400">'Codiara'</span>,
-              <br />
               {"  "}role: {"{"}
               <br />
               {"    "}primary: <span className="text-green-400">'Dev Team Manager'</span>,
               <br />
-              {"    "}focus: <span className="text-green-400">'DevOps'</span>,
+              {"    "}focus: <span className="text-green-400">'DevOps | Software developer  '</span>,
               <br />
               {"    "}passion: <span className="text-green-400">'Technical Leadership'</span>
               <br />

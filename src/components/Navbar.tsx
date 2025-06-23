@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { LanguageContext, Language, useTranslations } from '../translations';
-import logoImg from '../assets/img/C-codiara.jpg';
+import logoImg from '../assets/img/A.png';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,7 +48,7 @@ export const Navbar: React.FC = () => {
         <a href="#home" className="flex items-center gap-2">
           <img 
             src={logoImg} 
-            alt="Codiara Logo" 
+            alt="Andreu Sánchez Guerrero Logo" 
             className="w-8 h-8 rounded-lg object-cover"
           />
           <span className="font-bold text-xl">Andreu Sánchez Guerrero</span>

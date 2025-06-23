@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Github, Linkedin } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { useTranslations } from '../../../translations';
 import { CodeBlock } from './CodeBlock';
 import { ProfileImage } from './ProfileImage';
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
                 {translations.hero.buttons.contact}
               </a>
               <a href="#projects" className="btn-secondary">
-                {translations.hero.buttons.services}
+                {translations.hero.buttons.whatIdo}
               </a>
             </div>
             

@@ -8,10 +8,10 @@ export const SocialLinks: React.FC = () => {
   return (
     <div className="flex items-center gap-4 mt-10">
       <span className="text-gray-400">{translations.hero.connect}</span>
-      <a href="#" className="text-gray-400 hover:text-purple transition-colors">
+      <a href="https://github.com/AndreuSG" target='_blank' className="text-gray-400 hover:text-purple transition-colors">
         <Github />
       </a>
-      <a href="#" className="text-gray-400 hover:text-purple transition-colors">
+      <a href="https://www.linkedin.com/in/andreu-sanchez-guerrero/" target='_blank' className="text-gray-400 hover:text-purple transition-colors">
         <Linkedin />
       </a>
     </div>

@@ -13,14 +13,10 @@ export type NavbarTranslations = {
 // Hero translations type
 export type HeroTranslations = {
   available: string;
-  roles: {
-    teamManager: string;
-    devops: string;
-    developer: string;
-  };
+  roles: string;
   buttons: {
     contact: string;
-    services: string;
+    whatIdo: string;
   };
   connect: string;
 };
@@ -35,8 +31,8 @@ export type AboutTranslations = {
     description2: string;
   };
   stats: {
-    teamMembers: string;
-    projectsCompleted: string;
+    orchestrationAndDeployment: string;
+    fullStack: string;
     uptimeAchieved: string;
     supportAvailable: string;
   };

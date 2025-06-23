@@ -8,13 +8,13 @@ export const Stats: React.FC = () => {
   const stats = [
     {
       icon: Users,
-      value: '10+',
-      label: translations.about.stats.teamMembers,
+      value: 'Orchestration & Deployment',
+      label: translations.about.stats.orchestrationAndDeployment,
     },
     {
       icon: Code,
-      value: '50+',
-      label: translations.about.stats.projectsCompleted,
+      value: 'Full-Stack Development',
+      label: translations.about.stats.fullStack,
     },
     {
       icon: Cpu,
@@ -23,7 +23,7 @@ export const Stats: React.FC = () => {
     },
     {
       icon: Globe,
-      value: '24/7',
+      value: 'Proactive Support',
       label: translations.about.stats.supportAvailable,
     },
   ];
