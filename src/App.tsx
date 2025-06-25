@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Layout } from './components/Layout';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
-import { Projects } from './components/sections/Projects';
+import { WhatCanIdo } from './components/sections/WhatCanIdo/WhatCanIdo';
 import { Skills } from './components/sections/Skills';
 import { Contact } from './components/sections/Contact';
 import { LanguageContext, Language } from './translations';
@@ -15,7 +15,7 @@ function App() {
       <Layout>
         <Hero />
         <About />
-        <Projects />
+        <WhatCanIdo />
         <Skills />
         <Contact />
       </Layout>

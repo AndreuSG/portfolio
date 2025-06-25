@@ -15,18 +15,18 @@ export const getServices = (translations: ReturnType<typeof useTranslations>) =>
     features: translations.services.cloud.features,
     benefits: translations.services.cloud.benefits,
   },
-  {
-    id: 3,
-    title: translations.services.digital.title,
-    description: translations.services.digital.description,
-    features: translations.services.digital.features,
-    benefits: translations.services.digital.benefits,
-  },
-  {
-    id: 4,
-    title: translations.services.consulting.title,
-    description: translations.services.consulting.description,
-    features: translations.services.consulting.features,
-    benefits: translations.services.consulting.benefits,
-  },
+  // {
+  //   id: 3,
+  //   title: translations.services.digital.title,
+  //   description: translations.services.digital.description,
+  //   features: translations.services.digital.features,
+  //   benefits: translations.services.digital.benefits,
+  // },
+  // {
+  //   id: 4,
+  //   title: translations.services.consulting.title,
+  //   description: translations.services.consulting.description,
+  //   features: translations.services.consulting.features,
+  //   benefits: translations.services.consulting.benefits,
+  // },
 ];

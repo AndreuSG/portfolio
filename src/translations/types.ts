@@ -77,7 +77,7 @@ export type AboutTranslations = {
 };
 
 // Services translations type
-export type ServicesTranslations = {
+export type whatCanIdo = {
   title: string;
   subtitle: string;
   webdev: {
@@ -92,18 +92,18 @@ export type ServicesTranslations = {
     features: string[];
     benefits: string[];
   };
-  digital: {
-    title: string;
-    description: string;
-    features: string[];
-    benefits: string[];
-  };
-  consulting: {
-    title: string;
-    description: string;
-    features: string[];
-    benefits: string[];
-  };
+  // digital: {
+  //   title: string;
+  //   description: string;
+  //   features: string[];
+  //   benefits: string[];
+  // };
+  // consulting: {
+  //   title: string;
+  //   description: string;
+  //   features: string[];
+  //   benefits: string[];
+  // };
   features: string;
   benefits: string;
   getStarted: string;
@@ -164,7 +164,7 @@ export type Translations = {
   navbar: NavbarTranslations;
   hero: HeroTranslations;
   about: AboutTranslations;
-  services: ServicesTranslations;
+  services: whatCanIdo;
   skills: SkillsTranslations;
   contact: ContactTranslations;
 };

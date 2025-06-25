@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
               <a href="#contact" className="btn-primary">
                 {translations.hero.buttons.contact}
               </a>
-              <a href="#projects" className="btn-secondary">
+              <a href="#whatCanIdo" className="btn-secondary">
                 {translations.hero.buttons.whatIdo}
               </a>
             </div>

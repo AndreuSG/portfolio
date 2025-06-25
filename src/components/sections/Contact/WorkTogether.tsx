@@ -15,7 +15,7 @@ export const WorkTogether: React.FC = () => {
         <a href="https://codiara.com" target="_blank" rel="noopener noreferrer" className="btn-primary flex-1">
           {translations.contact.work.visitSite}
         </a>
-        <a href="#projects" className="btn-secondary flex-1">
+        <a href="#whatCanIdo" className="btn-secondary flex-1">
           {translations.contact.work.services}
         </a>
       </div>

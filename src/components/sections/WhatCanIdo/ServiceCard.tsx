@@ -27,7 +27,7 @@ export const ServiceCard: React.FC<ServiceProps> = ({ service }) => {
   const ServiceIcon = getServiceIcon(service.id);
 
   return (
-    <div className="group p-6 bg-black-50 border border-gray-800 rounded-xl hover:border-purple transition-all duration-500">
+      <div className="group p-6 bg-black-50 border border-gray-800 rounded-xl hover:border-purple transition-all duration-500 flex flex-col">
       <div className="flex items-center gap-4 mb-6">
         <div className="w-12 h-12 rounded-lg bg-purple/10 flex items-center justify-center">
           <ServiceIcon className="text-purple" size={24} />
@@ -61,7 +61,7 @@ export const ServiceCard: React.FC<ServiceProps> = ({ service }) => {
         </ul>
       </div>
       
-      <div className="mt-8 pt-6 border-t border-gray-800">
+      <div className="mt-auto pt-6 border-t border-gray-800">
         <a 
           href="#contact" 
           className="btn-primary w-full text-center"
