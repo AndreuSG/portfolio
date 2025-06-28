@@ -7,6 +7,7 @@ export type NavbarTranslations = {
   about: string;
   services: string;
   skills: string;
+  opensource: string;
   contact: string;
 };
 
@@ -92,18 +93,6 @@ export type whatCanIdo = {
     features: string[];
     benefits: string[];
   };
-  // digital: {
-  //   title: string;
-  //   description: string;
-  //   features: string[];
-  //   benefits: string[];
-  // };
-  // consulting: {
-  //   title: string;
-  //   description: string;
-  //   features: string[];
-  //   benefits: string[];
-  // };
   features: string;
   benefits: string;
   getStarted: string;
@@ -130,6 +119,35 @@ export type SkillsTranslations = {
     skills: Array<{ name: string; level: number }>;
   };
   technologies: string[];
+};
+
+// Open Source translations type
+export type OpenSourceTranslations = {
+  title: string;
+  subtitle: string;
+  description: string;
+  features: {
+    tools: {
+      title: string;
+      description: string;
+    };
+    automation: {
+      title: string;
+      description: string;
+    };
+    templates: {
+      title: string;
+      description: string;
+    };
+  };
+  comingSoon: {
+    title: string;
+    subtitle: string;
+    inDevelopment: string;
+    openSource: string;
+    followGithub: string;
+    getNotified: string;
+  };
 };
 
 // Contact translations type
@@ -166,5 +184,6 @@ export type Translations = {
   about: AboutTranslations;
   services: whatCanIdo;
   skills: SkillsTranslations;
+  opensource: OpenSourceTranslations;
   contact: ContactTranslations;
 };

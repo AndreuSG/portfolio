@@ -5,6 +5,7 @@ export const NAV_LINKS = [
   { nameKey: 'about', href: '#about' },
   { nameKey: 'services', href: '#whatCanIdo' },
   { nameKey: 'skills', href: '#skills' },
+  { nameKey: 'opensource', href: '#opensource' },
   { nameKey: 'contact', href: '#contact' },
 ];
 

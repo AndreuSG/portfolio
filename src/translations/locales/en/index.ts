@@ -4,6 +4,7 @@ import { hero } from './hero';
 import { about } from './about';
 import { services } from './services';
 import { skills } from './skills';
+import { opensource } from './opensource';
 import { contact } from './contact';
 
 export const en: Translations = {
@@ -12,5 +13,6 @@ export const en: Translations = {
   about,
   services,
   skills,
+  opensource,
   contact,
 } as const;

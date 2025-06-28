@@ -5,5 +5,6 @@ export const navbar: NavbarTranslations = {
   about: 'Sobre mi',
   services: 'Què puc aportar',
   skills: 'Tecnologies',
+  opensource: 'Open Source',
   contact: 'Contacte',
 };
