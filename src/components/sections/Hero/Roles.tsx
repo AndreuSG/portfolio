@@ -6,7 +6,7 @@ export const Roles: React.FC = () => {
   
   return (
     <div className="space-y-2 mb-8">
-      <p className="text-gray-300 text-xl">{translations.hero.roles}</p>
+      <p className="text-gray-300 text-xl lg:text-left text-center">{translations.hero.roles}</p>
     </div>
   );
 };

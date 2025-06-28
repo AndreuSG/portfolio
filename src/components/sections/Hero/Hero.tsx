@@ -12,8 +12,8 @@ export const Hero: React.FC = () => {
   return (
     <section id="home" className="min-h-screen flex items-center relative pt-20">
       <div className="container-custom">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          {/* Profile, Name and Description Section */}
+        {/* Mobile and Tablet Layout (Vertical) */}
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto lg:hidden">
           <div className="reveal mb-8 sm:mb-12">
             <ProfileImage />
             
@@ -39,8 +39,39 @@ export const Hero: React.FC = () => {
             <SocialLinks />
           </div>
           
-          {/* Code Block Section */}
           <div className="reveal">
+            <CodeBlock />
+          </div>
+        </div>
+
+        {/* Desktop Layout (Horizontal) */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-16 items-center">
+          <div className="reveal">
+            <ProfileImage />
+            
+            <div className="inline-block px-4 py-2 border border-purple rounded-full text-sm font-semibold text-purple mb-6 animate-pulse">
+              {translations.hero.available}
+            </div>
+            
+            <h1 className="mb-6">
+              <span className="gradient-text">Andreu Sánchez Guerrero</span>
+            </h1>
+            
+            <Roles />
+            
+            <div className="flex flex-wrap gap-4 mb-8">
+              <a href="#contact" className="btn-primary">
+                {translations.hero.buttons.contact}
+              </a>
+              <a href="#whatCanIdo" className="btn-secondary">
+                {translations.hero.buttons.whatIdo}
+              </a>
+            </div>
+            
+            <SocialLinks />
+          </div>
+          
+          <div className="reveal lg:flex justify-center">
             <CodeBlock />
           </div>
         </div>
