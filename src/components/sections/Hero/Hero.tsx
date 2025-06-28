@@ -10,10 +10,10 @@ export const Hero: React.FC = () => {
   const translations = useTranslations();
   
   return (
-    <section id="home" className="min-h-screen flex items-center relative pt-20">
+    <section id="home" className="min-h-screen flex items-center relative pt-20 pb-16 sm:pb-20 lg:pb-0">
       <div className="container-custom">
         {/* Mobile and Tablet Layout (Vertical) */}
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto lg:hidden">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto lg:hidden min-h-[calc(100vh-8rem)] justify-center">
           <div className="reveal mb-8 sm:mb-12">
             <ProfileImage />
             
@@ -76,7 +76,8 @@ export const Hero: React.FC = () => {
           </div>
         </div>
         
-        <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* Scroll Down - Solo visible en desktop */}
+        <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden lg:flex">
           <a href="#about" className="flex flex-col items-center text-gray-400 hover:text-purple transition-colors">
             <span className="text-xs sm:text-sm mb-2">Scroll Down</span>
             <ArrowDown size={18} />
