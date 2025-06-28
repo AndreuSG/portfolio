@@ -32,91 +32,75 @@ export const Navbar: React.FC = () => {
     };
   }, []);
 
+  // Close menu when clicking outside or on escape
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (isMenuOpen && !target.closest('.mobile-menu-container')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.addEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'hidden'; // Prevent background scroll
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black-50/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
-      }`}
-    >
-      <div className="container-custom flex justify-between items-center">
-        <a href="#home" className="flex items-center gap-2">
-          <img
-            src={logoImg}
-            alt="Andreu Sánchez Guerrero Logo"
-            className="w-8 h-8 rounded-lg object-cover"
-          />
-          <span className="font-bold text-xl">Andreu Sánchez Guerrero</span>
-        </a>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-black-50/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
+        }`}
+      >
+        <div className="container-custom flex justify-between items-center">
+          <a href="#home" className="flex items-center gap-2 z-60">
+            <img
+              src={logoImg}
+              alt="Andreu Sánchez Guerrero Logo"
+              className="w-8 h-8 rounded-lg object-cover"
+            />
+            <span className="font-bold text-xl">Andreu Sánchez Guerrero</span>
+          </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-gray-300 hover:text-purple transition-colors duration-300"
-            >
-              {link.name}
-            </a>
-          ))}
-          <div className="relative group">
-            <button className="flex items-center gap-2 px-4 py-2 bg-gradient-purple text-white rounded-lg hover:shadow-purple transition-all duration-300">
-              <Globe size={18} />
-              {languages.find((lang) => lang.code === language)?.name}
-            </button>
-            <div className="absolute right-0 mt-2 w-40 py-2 bg-black-50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-800">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => setLanguage(lang.code)}
-                  className={`w-full px-4 py-2 text-left hover:bg-purple/10 transition-colors duration-300 ${
-                    language === lang.code ? 'text-purple' : 'text-gray-300'
-                  }`}
-                >
-                  {lang.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-300 hover:text-purple"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-black-50/95 backdrop-blur-md shadow-md py-4 animate-slide-down">
-          <nav className="container-custom flex flex-col space-y-4">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-purple py-2 px-4 transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-300 hover:text-purple transition-colors duration-300"
               >
                 {link.name}
               </a>
             ))}
-            <div className="px-4 py-2">
-              <div className="flex flex-col gap-2">
-                <span className="text-gray-400 flex items-center gap-2">
-                  <Globe size={18} />
-                  Language
-                </span>
+            <div className="relative group">
+              <button className="flex items-center gap-2 px-4 py-2 bg-gradient-purple text-white rounded-lg hover:shadow-purple transition-all duration-300">
+                <Globe size={18} />
+                {languages.find((lang) => lang.code === language)?.name}
+              </button>
+              <div className="absolute right-0 mt-2 w-40 py-2 bg-black-50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-800">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    onClick={() => {
-                      setLanguage(lang.code);
-                      setIsMenuOpen(false);
-                    }}
-                    className={`py-2 px-4 text-left rounded-md hover:bg-purple/10 transition-colors duration-300 ${
+                    onClick={() => setLanguage(lang.code)}
+                    className={`w-full px-4 py-2 text-left hover:bg-purple/10 transition-colors duration-300 ${
                       language === lang.code ? 'text-purple' : 'text-gray-300'
                     }`}
                   >
@@ -126,8 +110,85 @@ export const Navbar: React.FC = () => {
               </div>
             </div>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-gray-300 hover:text-purple z-60 relative"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Navigation Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 md:hidden">
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+          
+          {/* Menu Content */}
+          <div className="mobile-menu-container absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-black-50 border-l border-gray-800 shadow-2xl">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-800">
+              <div className="flex items-center gap-2">
+                <img
+                  src={logoImg}
+                  alt="Logo"
+                  className="w-6 h-6 rounded object-cover"
+                />
+                <span className="font-semibold text-lg">Menu</span>
+              </div>
+            </div>
+
+            {/* Navigation Links */}
+            <nav className="p-6">
+              <div className="space-y-1">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="flex items-center py-3 px-4 text-gray-300 hover:text-white hover:bg-purple/10 rounded-lg transition-all duration-300 text-lg"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+
+              {/* Language Section */}
+              <div className="mt-8 pt-6 border-t border-gray-800">
+                <div className="flex items-center gap-2 px-4 py-2 text-gray-400 text-sm font-medium">
+                  <Globe size={16} />
+                  Language
+                </div>
+                <div className="mt-3 space-y-1">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setIsMenuOpen(false);
+                      }}
+                      className={`w-full flex items-center py-3 px-4 text-left rounded-lg transition-all duration-300 ${
+                        language === lang.code 
+                          ? 'text-purple bg-purple/10 border border-purple/20' 
+                          : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                      }`}
+                    >
+                      <span className="text-lg">{lang.name}</span>
+                      {language === lang.code && (
+                        <span className="ml-auto w-2 h-2 bg-purple rounded-full"></span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </nav>
+          </div>
         </div>
       )}
-    </header>
+    </>
   );
 };
