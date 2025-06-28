@@ -32,7 +32,12 @@ export const Navbar: React.FC = () => {
     };
   }, []);
 
-  // Close menu when clicking outside or on escape
+  // Handle menu toggle
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Close menu when clicking outside
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -40,24 +45,15 @@ export const Navbar: React.FC = () => {
       }
     };
 
-    const handleClickOutside = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (isMenuOpen && !target.closest('.mobile-menu-container')) {
-        setIsMenuOpen(false);
-      }
-    };
-
     if (isMenuOpen) {
       document.addEventListener('keydown', handleEscape);
-      document.addEventListener('click', handleClickOutside);
-      document.body.style.overflow = 'hidden'; // Prevent background scroll
+      document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
-      document.removeEventListener('click', handleClickOutside);
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
@@ -70,7 +66,7 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="container-custom flex justify-between items-center">
-          <a href="#home" className="flex items-center gap-2 z-60">
+          <a href="#home" className="flex items-center gap-2">
             <img
               src={logoImg}
               alt="Andreu Sánchez Guerrero Logo"
@@ -113,82 +109,95 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-300 hover:text-purple z-60 relative"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden text-gray-300 hover:text-purple transition-colors duration-300 p-2"
+            onClick={toggleMenu}
             aria-label="Toggle menu"
+            type="button"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </header>
 
-      {/* Mobile Navigation Overlay */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
-          
-          {/* Menu Content */}
-          <div className="mobile-menu-container absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-black-50 border-l border-gray-800 shadow-2xl">
-            {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-800">
-              <div className="flex items-center gap-2">
-                <img
-                  src={logoImg}
-                  alt="Logo"
-                  className="w-6 h-6 rounded object-cover"
-                />
-                <span className="font-semibold text-lg">Menu</span>
-              </div>
+      {/* Mobile Navigation */}
+      <div className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+        isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}>
+        {/* Backdrop */}
+        <div 
+          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+          onClick={() => setIsMenuOpen(false)}
+        />
+        
+        {/* Menu Panel */}
+        <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-black-50 border-l border-gray-800 shadow-2xl transform transition-transform duration-300 ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
+          {/* Header */}
+          <div className="flex items-center justify-between p-6 border-b border-gray-800">
+            <div className="flex items-center gap-2">
+              <img
+                src={logoImg}
+                alt="Logo"
+                className="w-6 h-6 rounded object-cover"
+              />
+              <span className="font-semibold text-lg">Andreu Sánchez Guerrero</span>
+            </div>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-400 hover:text-white transition-colors p-1"
+              aria-label="Close menu"
+            >
+              <X size={20} />
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="p-6">
+            <div className="space-y-2">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="block py-3 px-4 text-gray-300 hover:text-white hover:bg-purple/10 rounded-lg transition-all duration-300 text-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
             </div>
 
-            {/* Navigation Links */}
-            <nav className="p-6">
-              <div className="space-y-1">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="flex items-center py-3 px-4 text-gray-300 hover:text-white hover:bg-purple/10 rounded-lg transition-all duration-300 text-lg"
-                    onClick={() => setIsMenuOpen(false)}
+            {/* Language Section */}
+            <div className="mt-8 pt-6 border-t border-gray-800">
+              <div className="flex items-center gap-2 px-4 py-2 text-gray-400 text-sm font-medium mb-3">
+                <Globe size={16} />
+                Language
+              </div>
+              <div className="space-y-2">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setLanguage(lang.code);
+                      setIsMenuOpen(false);
+                    }}
+                    className={`w-full flex items-center justify-between py-3 px-4 text-left rounded-lg transition-all duration-300 ${
+                      language === lang.code 
+                        ? 'text-purple bg-purple/10 border border-purple/20' 
+                        : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                    }`}
                   >
-                    {link.name}
-                  </a>
+                    <span className="text-lg">{lang.name}</span>
+                    {language === lang.code && (
+                      <span className="w-2 h-2 bg-purple rounded-full"></span>
+                    )}
+                  </button>
                 ))}
               </div>
-
-              {/* Language Section */}
-              <div className="mt-8 pt-6 border-t border-gray-800">
-                <div className="flex items-center gap-2 px-4 py-2 text-gray-400 text-sm font-medium">
-                  <Globe size={16} />
-                  Language
-                </div>
-                <div className="mt-3 space-y-1">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        setLanguage(lang.code);
-                        setIsMenuOpen(false);
-                      }}
-                      className={`w-full flex items-center py-3 px-4 text-left rounded-lg transition-all duration-300 ${
-                        language === lang.code 
-                          ? 'text-purple bg-purple/10 border border-purple/20' 
-                          : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
-                      }`}
-                    >
-                      <span className="text-lg">{lang.name}</span>
-                      {language === lang.code && (
-                        <span className="ml-auto w-2 h-2 bg-purple rounded-full"></span>
-                      )}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </nav>
-          </div>
+            </div>
+          </nav>
         </div>
-      )}
+      </div>
     </>
   );
 };
