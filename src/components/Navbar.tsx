@@ -72,7 +72,8 @@ export const Navbar: React.FC = () => {
               alt="Andreu Sánchez Guerrero Logo"
               className="w-8 h-8 rounded-lg object-cover"
             />
-            <span className="font-bold text-xl">Andreu Sánchez Guerrero</span>
+            <span className="font-bold text-xl hidden sm:block">Andreu Sánchez Guerrero</span>
+            <span className="font-bold text-lg sm:hidden">A.S.G</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -134,18 +135,25 @@ export const Navbar: React.FC = () => {
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-800">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center justify-between p-4 border-b border-gray-800">
+            <div className="flex items-center gap-2 flex-1 min-w-0">
               <img
                 src={logoImg}
                 alt="Logo"
-                className="w-6 h-6 rounded object-cover"
+                className="w-6 h-6 rounded object-cover flex-shrink-0"
               />
-              <span className="font-semibold text-lg">Andreu Sánchez Guerrero</span>
+              <div className="min-w-0 flex-1">
+                <div className="font-semibold text-sm text-white truncate">
+                  Andreu Sánchez
+                </div>
+                <div className="font-semibold text-sm text-white truncate">
+                  Guerrero
+                </div>
+              </div>
             </div>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="text-gray-400 hover:text-white transition-colors p-1"
+              className="text-gray-400 hover:text-white transition-colors p-1 flex-shrink-0 ml-2"
               aria-label="Close menu"
             >
               <X size={20} />
