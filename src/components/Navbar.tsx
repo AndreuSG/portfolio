@@ -115,13 +115,13 @@ export const Navbar: React.FC = () => {
             aria-label="Toggle menu"
             type="button"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <Menu size={24} />
           </button>
         </div>
       </header>
 
       {/* Mobile Navigation */}
-      <div className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+      <div className={`fixed inset-0 z-[60] md:hidden transition-all duration-300 ${
         isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
         {/* Backdrop */}
@@ -136,27 +136,20 @@ export const Navbar: React.FC = () => {
         }`}>
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-800">
-            <div className="flex items-center gap-2 flex-1 min-w-0">
+            <div className="flex items-center gap-3">
               <img
                 src={logoImg}
                 alt="Logo"
-                className="w-6 h-6 rounded object-cover flex-shrink-0"
+                className="w-8 h-8 rounded-lg object-cover"
               />
-              <div className="min-w-0 flex-1">
-                <div className="font-semibold text-sm text-white truncate">
-                  Andreu Sánchez
-                </div>
-                <div className="font-semibold text-sm text-white truncate">
-                  Guerrero
-                </div>
-              </div>
+              <span className="font-bold text-white text-lg">A.S.G</span>
             </div>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="text-gray-400 hover:text-white transition-colors p-1 flex-shrink-0 ml-2"
+              className="text-gray-400 hover:text-white transition-colors p-2"
               aria-label="Close menu"
             >
-              <X size={20} />
+              <X size={24} />
             </button>
           </div>
 
