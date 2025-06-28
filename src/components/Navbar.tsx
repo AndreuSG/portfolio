@@ -60,11 +60,11 @@ export const Navbar: React.FC = () => {
             </a>
           ))}
           <div className="relative group">
-            <button className="flex items-center gap-2 text-gray-300 hover:text-purple transition-colors duration-300">
+            <button className="flex items-center gap-2 px-4 py-2 bg-gradient-purple text-white rounded-lg hover:shadow-purple transition-all duration-300">
               <Globe size={18} />
               {languages.find((lang) => lang.code === language)?.name}
             </button>
-            <div className="absolute right-0 mt-2 w-40 py-2 bg-black-50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <div className="absolute right-0 mt-2 w-40 py-2 bg-black-50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-800">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
