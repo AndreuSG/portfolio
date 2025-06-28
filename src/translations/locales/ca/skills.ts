@@ -1,43 +1,57 @@
-import { SkillsTranslations } from '../../types';
+import { SkillsTranslations } from "../../types";
 
 export const skills: SkillsTranslations = {
-  title: 'Les meves habilitats',
-  subtitle: 'Resum de les meves capacitats tècniques i experiència en lideratge.',
+  title: "Les meves habilitats",
+  subtitle:
+    "El meu perfil combina lideratge tècnic, desenvolupament full stack i passió per l'automatització i la millora contínua.",
   leadership: {
-    title: 'Lideratge',
+    title: "Lideratge i Soft Skills",
     skills: [
-      { name: 'Gestió d’equips', level: 90 },
-      { name: 'Agile/Scrum', level: 85 },
-      { name: 'Mentoria', level: 85 },
-      { name: 'Comunicació', level: 90 },
+      { name: "Comunicació efectiva i empatia", level: 99 },
+      { name: "Mentoria i formació de companys", level: 95 },
+      { name: "Gestió i coordinació d'equips tècnics", level: 90 },
+      { name: "Delegació i confiança en l'equip", level: 85 },
     ],
   },
   frontend: {
-    title: 'Frontend',
+    title: "Frontend",
     skills: [
-      { name: 'Next.js', level: 90 },
-      { name: 'Angular', level: 95 },
-      { name: 'TypeScript', level: 90 },
-      { name: 'React', level: 85 },
+      { name: "TypeScript (codi net i tipat)", level: 97 },
+      { name: "Angular (experiència avançada)", level: 95 },
+      { name: "React (interfícies modernes i animacions)", level: 90 },
+      { name: "Next.js", level: 90 },
     ],
   },
   backend: {
-    title: 'Backend',
+    title: "Backend",
     skills: [
-      { name: 'Nest.js', level: 90 },
-      { name: 'Node.js', level: 95 },
-      { name: 'BaaS', level: 85 },
-      { name: 'Disseny d’APIs', level: 90 },
+      { name: "Nest.js per a APIs escalables", level: 95 },
+      { name: "Node.js (rendiment i escalabilitat)", level: 95 },
+      { name: "Disseny i documentació d'APIs REST", level: 90 },
+      { name: "BaaS (Supabase, Firebase)", level: 85 },
     ],
   },
   devops: {
-    title: 'DevOps',
+    title: "DevOps i Cloud",
     skills: [
-      { name: 'CI/CD', level: 90 },
-      { name: 'Docker', level: 85 },
-      { name: 'Kubernetes', level: 80 },
-      { name: 'Serveis cloud', level: 85 },
+      { name: "CI/CD amb GitHub Actions i GitLab", level: 90 },
+      { name: "Docker (containers i optimització)", level: 85 },
+      { name: "Kubernetes i automatització de desplegaments", level: 85 },
+      { name: "Ansible (automatització de servidors)", level: 80 },
     ],
   },
-  technologies: ['Next.js', 'Angular', 'Nest.js', 'Node.js', 'Docker', 'Kubernetes'],
+  technologies: [
+    "Angular",
+    "Nest.js",
+    "Docker",
+    "Kubernetes",
+    "Ansible",
+    "React",
+    "Next.js",
+    "Payload CMS",
+    "Node.js",
+    "Laravel",
+    "TypeScript",
+    "PHP",
+  ],
 };

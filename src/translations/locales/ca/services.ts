@@ -1,7 +1,7 @@
 import { whatCanIdo } from "../../types";
 
 export const services: whatCanIdo = {
-  title: "Què puc aportar",
+  title: "Què puc aportar?",
   subtitle:
     "Solucions tecnològiques a mida per impulsar el teu negoci. Combino experiència i passió per la innovació per aconseguir resultats reals.",
 
