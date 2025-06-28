@@ -38,23 +38,23 @@ export const Experience: React.FC = () => {
 
   return (
     <div>
-      <h3 className="text-2xl font-bold mb-6">{translations.about.experienceTitle}</h3>
+      <h3 className="text-xl sm:text-2xl font-bold mb-6">{translations.about.experienceTitle}</h3>
       <div className="space-y-6">
         {experiences.map((item, index) => (
           <div 
             key={index} 
-            className="relative pl-10 pb-6 border-l border-gray-800 last:border-0 last:pb-0"
+            className="relative pl-8 sm:pl-10 pb-6 border-l border-gray-800 last:border-0 last:pb-0"
           >
-            <div className="absolute left-0 top-0 w-10 h-10 -translate-x-1/2 flex items-center justify-center rounded-full bg-black border border-purple">
-              <item.icon size={18} className="text-purple" />
+            <div className="absolute left-0 top-0 w-8 h-8 sm:w-10 sm:h-10 -translate-x-1/2 flex items-center justify-center rounded-full bg-black border border-purple">
+              <item.icon size={16} className="text-purple sm:w-[18px] sm:h-[18px]" />
             </div>
             <div className="pt-1">
-              <h4 className="text-xl font-semibold">{item.title}</h4>
-              <div className="flex flex-wrap justify-between text-sm mb-2">
-                <span className="text-purple">{item.company}</span>
+              <h4 className="text-lg sm:text-xl font-semibold leading-tight mb-2">{item.title}</h4>
+              <div className="flex flex-col sm:flex-row sm:justify-between text-sm mb-3 gap-1">
+                <span className="text-purple font-medium">{item.company}</span>
                 <span className="text-gray-400">{item.period}</span>
               </div>
-              <p className="text-gray-300">{item.description}</p>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">{item.description}</p>
             </div>
           </div>
         ))}

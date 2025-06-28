@@ -12,21 +12,21 @@ export const Hero: React.FC = () => {
   return (
     <section id="home" className="min-h-screen flex items-center relative pt-20">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="reveal">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="reveal text-center lg:text-left">
             <ProfileImage />
             
-            <div className="inline-block px-4 py-2 border border-purple rounded-full text-sm font-semibold text-purple mb-6 animate-pulse">
+            <div className="inline-block px-3 sm:px-4 py-2 border border-purple rounded-full text-xs sm:text-sm font-semibold text-purple mb-4 sm:mb-6 animate-pulse">
               {translations.hero.available}
             </div>
             
-            <h1 className="mb-6">
-              <span className="gradient-text">Andreu Sánchez Guerrero</span>
+            <h1 className="mb-4 sm:mb-6">
+              <span className="gradient-text">{window.innerWidth < 640 ? 'Andreu S.G.' : 'Andreu Sánchez Guerrero'}</span>
             </h1>
             
             <Roles />
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <a href="#contact" className="btn-primary">
                 {translations.hero.buttons.contact}
               </a>
@@ -38,15 +38,15 @@ export const Hero: React.FC = () => {
             <SocialLinks />
           </div>
           
-          <div className="reveal lg:flex justify-center">
+          <div className="reveal lg:flex justify-center order-first lg:order-last">
             <CodeBlock />
           </div>
         </div>
         
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
           <a href="#about" className="flex flex-col items-center text-gray-400 hover:text-purple transition-colors">
-            <span className="text-sm mb-2">Scroll Down</span>
-            <ArrowDown size={20} />
+            <span className="text-xs sm:text-sm mb-2">Scroll Down</span>
+            <ArrowDown size={18} />
           </a>
         </div>
       </div>

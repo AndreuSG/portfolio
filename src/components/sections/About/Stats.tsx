@@ -29,12 +29,12 @@ export const Stats: React.FC = () => {
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-4 mb-8 bg-black p-6 rounded-xl border border-gray-800">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 bg-black p-4 sm:p-6 rounded-xl border border-gray-800">
       {stats.map((stat, index) => (
-        <div key={index} className="text-center p-4 bg-black-100 rounded-lg hover:bg-purple/10 transition-colors duration-300">
-          <stat.icon className="mx-auto mb-2 text-purple" size={24} />
-          <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-          <div className="text-sm text-gray-400">{stat.label}</div>
+        <div key={index} className="text-center p-3 sm:p-4 bg-black-100 rounded-lg hover:bg-purple/10 transition-colors duration-300">
+          <stat.icon className="mx-auto mb-2 text-purple" size={20} />
+          <div className="text-sm sm:text-base lg:text-lg font-bold text-white mb-1 leading-tight">{stat.value}</div>
+          <div className="text-xs sm:text-sm text-gray-400 leading-tight">{stat.label}</div>
         </div>
       ))}
     </div>

@@ -10,14 +10,14 @@ export const Contact: React.FC = () => {
   return (
     <section id="contact" className="section">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16 reveal">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal">
           <h2 className="mb-4"><span className="gradient-text">{translations.contact.title}</span></h2>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
             {translations.contact.subtitle}
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start reveal">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start reveal">
           <ContactForm />
           <div>
             <ContactInfo />
