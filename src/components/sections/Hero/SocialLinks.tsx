@@ -6,13 +6,13 @@ export const SocialLinks: React.FC = () => {
   const translations = useTranslations();
   
   return (
-    <div className="flex items-center gap-4 mt-10">
-      <span className="text-gray-400">{translations.hero.connect}</span>
+    <div className="flex items-center justify-center gap-4">
+      <span className="text-gray-400 text-sm sm:text-base">{translations.hero.connect}</span>
       <a href="https://github.com/AndreuSG" target='_blank' className="text-gray-400 hover:text-purple transition-colors">
-        <Github />
+        <Github size={20} />
       </a>
       <a href="https://www.linkedin.com/in/andreu-sanchez-guerrero/" target='_blank' className="text-gray-400 hover:text-purple transition-colors">
-        <Linkedin />
+        <Linkedin size={20} />
       </a>
     </div>
   );
