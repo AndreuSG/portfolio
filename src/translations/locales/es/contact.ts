@@ -24,7 +24,7 @@ export const contact: ContactTranslations = {
     title: 'Trabajemos juntos',
     description:
       'Estoy disponible para colaborar contigo y ayudarte a llevar tu proyecto al siguiente nivel. Hablemos.',
-    visitSite: 'Ver portfolio',
+    visitSite: 'Visitar Codiara',
     services: 'Ver servicios',
   },
 };

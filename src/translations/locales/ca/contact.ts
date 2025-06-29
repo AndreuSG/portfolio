@@ -5,7 +5,7 @@ export const contact: ContactTranslations = {
   subtitle:
     'Tens un projecte o una idea? Estic disponible per ajudar-te a fer-la realitat.',
   form: {
-    title: 'Envia’m un missatge',
+    title: 'Envia\'m un missatge',
     name: 'El teu nom',
     email: 'El teu email',
     subject: 'Assumpte',
@@ -24,7 +24,7 @@ export const contact: ContactTranslations = {
     title: 'Treballem junts',
     description:
       'Estic disponible per col·laborar amb tu i ajudar-te a portar el teu projecte al següent nivell. Parlem-ne.',
-    visitSite: 'Veure portfolio',
+    visitSite: 'Visitar Codiara',
     services: 'Veure serveis',
   },
 };
