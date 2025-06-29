@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslations } from '../../../translations';
 import { ContactForm } from './ContactForm';
 import { ContactInfo } from './ContactInfo';
-import { WorkTogether } from './WorkTogether';
 
 export const Contact: React.FC = () => {
   const translations = useTranslations();
@@ -21,7 +20,7 @@ export const Contact: React.FC = () => {
           <ContactForm />
           <div>
             <ContactInfo />
-            <WorkTogether />
+            {/* Aquí puedes agregar otro componente o contenido */}
           </div>
         </div>
       </div>
