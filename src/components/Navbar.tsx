@@ -76,8 +76,8 @@ export const Navbar: React.FC = () => {
             <span className="font-bold text-lg sm:hidden">A.S.G</span>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Solo visible en pantallas grandes (xl y superiores) */}
+          <nav className="hidden xl:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -108,9 +108,9 @@ export const Navbar: React.FC = () => {
             </div>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile/Tablet Menu Button - Visible en pantallas menores a xl */}
           <button
-            className="md:hidden text-gray-300 hover:text-purple transition-colors duration-300 p-2"
+            className="xl:hidden text-gray-300 hover:text-purple transition-colors duration-300 p-2"
             onClick={toggleMenu}
             aria-label="Toggle menu"
             type="button"
@@ -120,8 +120,8 @@ export const Navbar: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Navigation */}
-      <div className={`fixed inset-0 z-[60] md:hidden transition-all duration-300 ${
+      {/* Mobile/Tablet Navigation - Visible en pantallas menores a xl */}
+      <div className={`fixed inset-0 z-[60] xl:hidden transition-all duration-300 ${
         isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
         {/* Backdrop */}
