@@ -26,11 +26,4 @@ export const contact: ContactTranslations = {
     download: 'Download CV',
     updated: 'Updated',
   },
-  work: {
-    title: 'Let\'s Work Together',
-    description:
-      'I\'m available to collaborate and help take your project to the next level. Let\'s talk.',
-    visitSite: 'View portfolio',
-    services: 'View services',
-  },
 };
