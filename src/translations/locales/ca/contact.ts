@@ -22,15 +22,7 @@ export const contact: ContactTranslations = {
   },
   cv: {
     title: 'Descarregar CV',
-    description: 'Descarrega el meu currículum complet amb tota la meva experiència professional i habilitats tècniques.',
     download: 'Descarregar CV',
     updated: 'Actualitzat',
-  },
-  work: {
-    title: 'Treballem junts',
-    description:
-      'Estic disponible per col·laborar amb tu i ajudar-te a portar el teu projecte al següent nivell. Parlem-ne.',
-    visitSite: 'Veure portfolio',
-    services: 'Veure serveis',
   },
 };
