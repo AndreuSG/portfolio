@@ -22,7 +22,6 @@ export const contact: ContactTranslations = {
   },
   cv: {
     title: 'Download CV',
-    description: '',
     download: 'Download CV',
     updated: 'Updated',
   },
