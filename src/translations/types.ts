@@ -170,16 +170,8 @@ export type ContactTranslations = {
     location: string;
   };
   cv?: {
-    title: string;
-    description: string;
     download: string;
     updated: string;
-  };
-  work: {
-    title: string;
-    description: string;
-    visitSite: string;
-    services: string;
   };
 };
 

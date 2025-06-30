@@ -41,10 +41,10 @@ export const skills: SkillsTranslations = {
     ],
   },
   technologies: [
-    "Angular",
-    "Nest.js",
     "Docker",
     "Kubernetes",
+    "Angular",
+    "Nest.js",
     "Ansible",
     "React",
     "Next.js",

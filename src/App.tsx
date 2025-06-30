@@ -9,7 +9,7 @@ import { Contact } from './components/sections/Contact';
 import { LanguageContext, Language } from './translations';
 
 function App() {
-  const [language, setLanguage] = useState<Language>('ca');
+  const [language, setLanguage] = useState<Language>('es');
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

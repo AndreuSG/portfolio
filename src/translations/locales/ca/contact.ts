@@ -21,7 +21,6 @@ export const contact: ContactTranslations = {
     location: 'Ubicació',
   },
   cv: {
-    title: 'Descarregar CV',
     download: 'Descarregar CV',
     updated: 'Actualitzat',
   },

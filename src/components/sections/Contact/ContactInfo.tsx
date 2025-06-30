@@ -9,14 +9,14 @@ export const ContactInfo: React.FC = () => {
     {
       icon: Mail,
       label: translations.contact.info.email,
-      value: 'contact@example.com',
-      link: 'mailto:contact@example.com',
+      value: 'andreu.s.g30@gmail.com',
+      link: 'mailto:andreu.s.g30@gmail.com',
     },
     {
       icon: Phone,
       label: translations.contact.info.phone,
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+34 674 53 19 46',
+      link: 'tel:+34674531946',
     },
     {
       icon: MapPin,
