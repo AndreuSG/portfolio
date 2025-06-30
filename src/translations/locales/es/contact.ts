@@ -20,6 +20,12 @@ export const contact: ContactTranslations = {
     phone: 'Teléfono',
     location: 'Ubicación',
   },
+  cv: {
+    title: 'Descargar CV',
+    description: 'Descarga mi currículum completo con toda mi experiencia profesional y habilidades técnicas.',
+    download: 'Descargar CV',
+    updated: 'Actualizado',
+  },
   work: {
     title: 'Trabajemos juntos',
     description:

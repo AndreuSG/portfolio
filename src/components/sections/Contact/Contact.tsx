@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslations } from '../../../translations';
 import { ContactForm } from './ContactForm';
 import { ContactInfo } from './ContactInfo';
+import { CVDownload } from './CVDownload';
 
 export const Contact: React.FC = () => {
   const translations = useTranslations();
@@ -18,9 +19,9 @@ export const Contact: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start reveal">
           <ContactForm />
-          <div>
+          <div className="space-y-8">
             <ContactInfo />
-            {/* Aquí puedes agregar otro componente o contenido */}
+            <CVDownload />
           </div>
         </div>
       </div>

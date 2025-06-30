@@ -5,7 +5,7 @@ export const contact: ContactTranslations = {
   subtitle:
     'Tens un projecte o una idea? Estic disponible per ajudar-te a fer-la realitat.',
   form: {
-    title: 'Envia’m un missatge',
+    title: 'Envia\'m un missatge',
     name: 'El teu nom',
     email: 'El teu email',
     subject: 'Assumpte',
@@ -19,6 +19,12 @@ export const contact: ContactTranslations = {
     email: 'Email',
     phone: 'Telèfon',
     location: 'Ubicació',
+  },
+  cv: {
+    title: 'Descarregar CV',
+    description: 'Descarrega el meu currículum complet amb tota la meva experiència professional i habilitats tècniques.',
+    download: 'Descarregar CV',
+    updated: 'Actualitzat',
   },
   work: {
     title: 'Treballem junts',
