@@ -22,7 +22,7 @@ export const contact: ContactTranslations = {
   },
   cv: {
     title: 'Download CV',
-    description: 'Download my complete resume with all my professional experience and technical skills.',
+    description: '',
     download: 'Download CV',
     updated: 'Updated',
   },
